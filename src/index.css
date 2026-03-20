@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #2b3896;
+  --secondary: #4c616c;
+  --surface: #f8f9fa;
+  --on-surface: #191c1d;
+  --surface-container-low: #f3f4f5;
+  --surface-container-high: #e7e8e9;
+  --surface-container-lowest: #ffffff;
+  --primary-container: #4551af;
+  --on-primary: #ffffff;
+  --outline-variant: #c5c5d4;
+  --on-background: #191c1d;
+  --secondary-container: #cfe6f2;
+  --on-surface-variant: #454652;
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary: var(--on-primary);
+  --color-outline-variant: var(--outline-variant);
+  --color-on-background: var(--on-background);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-surface-variant: var(--on-surface-variant);
+
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface;
+  }
+}
+
+@layer components {
+  .blueprint-grid {
+    background-image: radial-gradient(circle, #c5c5d4 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.1;
+  }
+  
+  .glass-nav {
+    @apply bg-surface/70 backdrop-blur-md border-b border-outline-variant/10 sticky top-0 z-50;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-md font-bold tracking-tight hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95 flex items-center gap-2;
+  }
+  
+  .btn-secondary {
+    @apply border border-outline-variant/20 bg-surface-container-low text-secondary px-8 py-4 rounded-md font-bold tracking-tight hover:bg-surface-container-high transition-all active:scale-95;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .marquee-container {
+    @apply flex whitespace-nowrap gap-12 md:gap-24 items-center opacity-40 grayscale hover:grayscale-0 transition-all duration-700 py-4;
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+}
