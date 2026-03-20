@@ -158,7 +158,7 @@ document.querySelector('#app').innerHTML = `
   <footer class="w-full py-12 px-8 bg-surface-container-low border-t border-outline-variant/10 mt-24">
     <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto w-full gap-4">
        <div class="text-lg font-bold text-on-background font-headline">Sandeep Gurung</div>
-       <div class="text-sm text-on-surface-variant italic">© 2024 Sandeep Gurung. Built with Precision.</div>
+       <div class="text-sm text-on-surface-variant italic">© 2026 Sandeep Gurung.</div>
        <div class="flex gap-6">
          <a class="text-secondary hover:text-primary transition-colors text-sm font-bold" href="http://www.linkedin.com/in/issandeepgurung">LinkedIn</a>
          <a class="text-secondary hover:text-primary transition-colors text-sm font-bold" href="https://github.com/SandeepGurung">GitHub</a>
@@ -215,7 +215,7 @@ if (contactForm) {
     e.preventDefault();
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.innerHTML;
-    
+
     // Feedback: Loading state
     submitBtn.disabled = true;
     submitBtn.innerHTML = `
@@ -224,9 +224,9 @@ if (contactForm) {
     `;
 
     const formData = new FormData(contactForm);
-    
+
     try {
-      const response = await fetch('https://formspree.io/f/sandeepgrg444@gmail.com', {
+      const response = await fetch('https://formspree.io/f/xzdjwpzn', {
         method: 'POST',
         body: formData,
         headers: {
