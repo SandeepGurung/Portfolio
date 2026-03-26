@@ -5,7 +5,7 @@ import { Contact } from './components/Contact'
 
 document.querySelector('#app').innerHTML = `
   <nav class="glass-nav">
-    <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+    <div class="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-7xl mx-auto">
       <div class="text-xl font-bold tracking-tighter text-on-background font-headline">Sandeep Gurung</div>
       <div class="hidden md:flex items-center gap-8">
         <a class="nav-link" href="#experience">Experience</a>
@@ -13,31 +13,31 @@ document.querySelector('#app').innerHTML = `
         <a class="nav-link" href="#contact">Contact</a>
       </div>
       
-      <div class="flex items-center gap-4">
-        <a href="/Sandeep Gurung CV.docx" download class="hidden md:inline-block bg-primary-container text-on-primary px-5 py-2 rounded font-medium hover:opacity-80 transition-all duration-300 scale-95 active:scale-90">
+      <div class="flex items-center gap-2 md:gap-4">
+        <a href="/Sandeep Gurung CV.docx" download class="inline-block bg-primary-container text-on-primary px-3 py-1.5 md:px-5 md:py-2 rounded text-sm md:text-base font-medium hover:opacity-80 transition-all duration-300 active:scale-95">
           Download CV
         </a>
-        <button id="mobile-menu-btn" class="md:hidden text-on-background p-2">
-          <span class="material-symbols-outlined text-3xl">menu</span>
+        <button id="mobile-menu-btn" class="hidden text-on-background p-1 md:p-2">
+          <span class="material-symbols-outlined text-2xl md:text-3xl">menu</span>
         </button>
       </div>
     </div>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-surface z-[100] translate-x-full transition-transform duration-500 ease-in-out md:hidden">
-      <div class="flex flex-col h-full">
-        <div class="flex justify-between items-center px-8 py-4 border-b border-outline-variant/10">
+    <div id="mobile-menu" class="fixed inset-0 bg-surface z-[100] translate-x-full transition-transform duration-500 ease-in-out md:hidden flex">
+      <div class="flex flex-col w-full h-full">
+        <div class="flex justify-between items-center px-4 py-4 border-b border-outline-variant/10">
           <div class="text-xl font-bold tracking-tighter text-on-background font-headline">Sandeep Gurung</div>
           <button id="close-menu-btn" class="text-on-background p-2">
             <span class="material-symbols-outlined text-3xl">close</span>
           </button>
         </div>
-        <div class="flex flex-col gap-6 p-12">
-          <a class="mobile-nav-link text-3xl font-headline font-bold" href="#experience">Experience</a>
-          <a class="mobile-nav-link text-3xl font-headline font-bold" href="#certifications">Certifications</a>
-          <a class="mobile-nav-link text-3xl font-headline font-bold" href="#contact">Contact</a>
-          <div class="pt-8">
-            <a href="/Sandeep Gurung CV.docx" download class="btn-primary w-full justify-center">Download CV</a>
+        <div class="flex flex-col gap-6 p-6 overflow-y-auto">
+          <a class="mobile-nav-link text-3xl font-headline font-bold text-primary hover:translate-x-2 transition-transform" href="#experience">Experience</a>
+          <a class="mobile-nav-link text-4xl font-headline font-bold text-primary hover:translate-x-2 transition-transform" href="#certifications">Certifications</a>
+          <a class="mobile-nav-link text-4xl font-headline font-bold text-primary hover:translate-x-2 transition-transform" href="#contact">Contact</a>
+          <div class="pt-8 border-t border-outline-variant/10 mt-4">
+            <a href="/Sandeep Gurung CV.docx" download class="btn-primary w-full justify-center text-lg">Download CV</a>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@ document.querySelector('#app').innerHTML = `
     <div class="absolute inset-0 blueprint-grid pointer-events-none"></div>
     
     <!-- Hero Section -->
-    <div class="max-w-7xl mx-auto px-8 w-full py-24 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 w-full py-16 md:py-24 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <!-- Left Content -->
         <div class="lg:col-span-7 space-y-8 animate-fade-in">
@@ -57,13 +57,13 @@ document.querySelector('#app').innerHTML = `
               <span class="w-8 h-[1px] bg-secondary-container"></span>
               PORTFOLIO
             </div>
-            <h1 class="font-headline text-5xl md:text-7xl font-bold text-on-background tracking-tighter leading-[1.05]">
+            <h1 class="font-headline text-4xl md:text-7xl font-bold text-on-background tracking-tighter leading-[1.05]">
               Full-Stack Web Developer <span class="text-primary italic">Sandeep Gurung</span>
             </h1>
           </div>
           
           <div class="flex flex-col md:flex-row gap-8 md:items-start">
-            <p class="text-on-surface-variant text-lg leading-relaxed max-w-md">
+            <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-md">
               Dynamic Full-Stack Developer and Master's degree student with 3+ years of professional experience in custom WordPress and React development.
             </p>
             <div class="hidden md:block w-[1px] h-20 bg-outline-variant/30"></div>
@@ -79,12 +79,12 @@ document.querySelector('#app').innerHTML = `
             </div>
           </div>
 
-          <div class="flex flex-wrap gap-4 pt-4">
-            <a href="#projects" class="btn-primary">
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <a href="#experience" class="btn-primary w-full sm:w-auto">
               View My Work
               <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
-            <a href="#contact" class="btn-secondary">
+            <a href="#contact" class="btn-secondary w-full sm:w-auto text-center">
               Contact Me
             </a>
           </div>
@@ -128,24 +128,23 @@ document.querySelector('#app').innerHTML = `
     </div>
 
     <!-- Tech Stack Marquee -->
-    <div class="py-12 bg-surface-container-low w-full overflow-hidden border-y border-outline-variant/10">
-      <div class="max-w-7xl mx-auto px-8 mb-8">
+    <div class="py-8 md:py-12 bg-surface-container-low w-full overflow-hidden border-y border-outline-variant/10">
+      <div class="max-w-7xl mx-auto px-4 md:px-8 mb-6 md:mb-8">
         <span class="font-label text-[10px] text-secondary/60 uppercase tracking-[0.3em] font-bold">Technology Stack</span>
       </div>
       <div class="marquee-container">
-        <span class="text-2xl font-headline font-bold text-secondary flex items-center gap-2"><span class="material-symbols-outlined">code</span> REACT</span>
-        <span class="text-2xl font-headline font-bold text-secondary flex items-center gap-2"><span class="material-symbols-outlined">javascript</span> JAVASCRIPT</span>
-        <span class="text-2xl font-headline font-bold text-secondary flex items-center gap-2"><span class="material-symbols-outlined">terminal</span> PHP</span>
-        <span class="text-2xl font-headline font-bold text-secondary flex items-center gap-2"><span class="material-symbols-outlined">layers</span> WORDPRESS</span>
-        <span class="text-2xl font-headline font-bold text-secondary flex items-center gap-2"><span class="material-symbols-outlined">brush</span> FIGMA</span>
-        <span class="text-2xl font-headline font-bold text-secondary flex items-center gap-2"><span class="material-symbols-outlined">cached</span> SEO</span>
-        <!-- Duplicated for seamless loop -->
-        <span class="text-2xl font-headline font-bold text-secondary flex items-center gap-2"><span class="material-symbols-outlined">code</span> REACT</span>
-        <span class="text-2xl font-headline font-bold text-secondary flex items-center gap-2"><span class="material-symbols-outlined">javascript</span> JAVASCRIPT</span>
-        <span class="text-2xl font-headline font-bold text-secondary flex items-center gap-2"><span class="material-symbols-outlined">terminal</span> PHP</span>
-        <span class="text-2xl font-headline font-bold text-secondary flex items-center gap-2"><span class="material-symbols-outlined">layers</span> WORDPRESS</span>
-        <span class="text-2xl font-headline font-bold text-secondary flex items-center gap-2"><span class="material-symbols-outlined">brush</span> FIGMA</span>
-        <span class="text-2xl font-headline font-bold text-secondary flex items-center gap-2"><span class="material-symbols-outlined">cached</span> SEO</span>
+        <span class="text-xl md:text-2xl font-headline font-bold text-secondary flex items-center gap-1 md:gap-2"><span class="material-symbols-outlined text-xl md:text-2xl">code</span> REACT</span>
+        <span class="text-xl md:text-2xl font-headline font-bold text-secondary flex items-center gap-1 md:gap-2"><span class="material-symbols-outlined text-xl md:text-2xl">javascript</span> JAVASCRIPT</span>
+        <span class="text-xl md:text-2xl font-headline font-bold text-secondary flex items-center gap-1 md:gap-2"><span class="material-symbols-outlined text-xl md:text-2xl">terminal</span> PHP</span>
+        <span class="text-xl md:text-2xl font-headline font-bold text-secondary flex items-center gap-1 md:gap-2"><span class="material-symbols-outlined text-xl md:text-2xl">layers</span> WORDPRESS</span>
+        <span class="text-xl md:text-2xl font-headline font-bold text-secondary flex items-center gap-1 md:gap-2"><span class="material-symbols-outlined text-xl md:text-2xl">brush</span> FIGMA</span>
+        <span class="text-xl md:text-2xl font-headline font-bold text-secondary flex items-center gap-1 md:gap-2"><span class="material-symbols-outlined text-xl md:text-2xl">cached</span> SEO</span>
+        <span class="text-xl md:text-2xl font-headline font-bold text-secondary flex items-center gap-1 md:gap-2"><span class="material-symbols-outlined text-xl md:text-2xl">code</span> REACT</span>
+        <span class="text-xl md:text-2xl font-headline font-bold text-secondary flex items-center gap-1 md:gap-2"><span class="material-symbols-outlined text-xl md:text-2xl">javascript</span> JAVASCRIPT</span>
+        <span class="text-xl md:text-2xl font-headline font-bold text-secondary flex items-center gap-1 md:gap-2"><span class="material-symbols-outlined text-xl md:text-2xl">terminal</span> PHP</span>
+        <span class="text-xl md:text-2xl font-headline font-bold text-secondary flex items-center gap-1 md:gap-2"><span class="material-symbols-outlined text-xl md:text-2xl">layers</span> WORDPRESS</span>
+        <span class="text-xl md:text-2xl font-headline font-bold text-secondary flex items-center gap-1 md:gap-2"><span class="material-symbols-outlined text-xl md:text-2xl">brush</span> FIGMA</span>
+        <span class="text-xl md:text-2xl font-headline font-bold text-secondary flex items-center gap-1 md:gap-2"><span class="material-symbols-outlined text-xl md:text-2xl">cached</span> SEO</span>
       </div>
     </div>
 
@@ -155,7 +154,7 @@ document.querySelector('#app').innerHTML = `
 
   </main>
 
-  <footer class="w-full py-12 px-8 bg-surface-container-low border-t border-outline-variant/10 mt-24">
+  <footer class="w-full py-8 md:py-12 px-4 md:px-8 bg-surface-container-low border-t border-outline-variant/10 mt-16 md:mt-24">
     <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto w-full gap-4">
        <div class="text-lg font-bold text-on-background font-headline">Sandeep Gurung</div>
        <div class="text-sm text-on-surface-variant italic">© 2026 Sandeep Gurung.</div>
@@ -180,8 +179,15 @@ const mobileMenu = document.querySelector('#mobile-menu');
 const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
 const toggleMenu = (open) => {
-  mobileMenu.style.transform = open ? 'translateX(0)' : 'translateX(100%)';
-  document.body.style.overflow = open ? 'hidden' : '';
+  if (open) {
+    mobileMenu.classList.remove('translate-x-full');
+    mobileMenu.classList.add('translate-x-0');
+    document.body.style.overflow = 'hidden';
+  } else {
+    mobileMenu.classList.remove('translate-x-0');
+    mobileMenu.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+  }
 };
 
 if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', () => toggleMenu(true));
